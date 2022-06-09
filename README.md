@@ -6,7 +6,7 @@
 
 File > Swift Packages > Add Package Dependency: https://github.com/aruis/PacmanProgress.git
 
-![CleanShot-2022-06-09-22 11 43](https://user-images.githubusercontent.com/1785495/172867898-36ff3bca-c4b2-4bce-8c27-ce3b7e15db4f.png)
+![CleanShot-2022-06-09-22 13 29](https://user-images.githubusercontent.com/1785495/172868303-34730d79-8a6b-4b43-977f-7386daad3590.gif)
 
 ## 例子
 
