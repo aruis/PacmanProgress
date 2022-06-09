@@ -6,6 +6,6 @@ final class PacmanProgressTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(PacmanProgress().text, "Hello, World!")
+//        XCTAssertEqual(PacmanProgress().text, "Hello, World!")
     }
 }
