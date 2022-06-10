@@ -13,7 +13,9 @@ struct Demo: View {
     
     var body: some View {
         VStack{
-            PacmanProgress(progress: $procress)
+            PacmanProgress(progress: $procress,displayType: .mini(pacmanColor: .yellow,dotColor: .gray))
+            
+            PacmanProgress(progress: $procress,displayType: .standard(pacmanColor: .yellow,dotColor: .gray))
             Button("TEST", action: {
                 procress += 0.05
             })

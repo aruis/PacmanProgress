@@ -12,8 +12,7 @@ struct Pacman: View {
     @State var eat = true
     
     var body: some View {
-        GeometryReader{geometry in
-            let size = geometry.size
+//        GeometryReader{geometry in
             ZStack{
                 Circle()
                     .trim(from: 0.5, to: 1)
@@ -27,7 +26,7 @@ struct Pacman: View {
                 eat.toggle()
             }
             
-        }
+//        }
     }
 }
 
