@@ -23,22 +23,23 @@ public struct PacmanProgress: View {
         GeometryReader{ geometry in
             let size = geometry.size
             let pacmanSize = size.width / 10
-            let dotCount:Int = Int(size.width / 15)
+            let dotCount:Int = Int(size.width / 17)
+            
             ZStack{
                 HStack{
-                    ForEach(1...dotCount,id:\.self){ index in
+                    ForEach(0...dotCount,id:\.self){ index in
                         
                         switch displayType {
                         case .standard(_,let dotColor):
                             Circle()
                                 .foregroundColor(dotColor)
-                                .opacity(Float(index) < (Float(dotCount) * progress ) + 2 ? 0 : 1)
+                                .opacity(Float(index) < (Float(dotCount) * progress ) + 1 ? 0 : 1)
                             
                         case .mini(let pacmanColor,let dotColor):
-                            if Float(index) < Float(dotCount) * progress - 1 {
+                            if Float(index) < Float(dotCount) * progress  {
                                 Circle()
                                     .foregroundColor(pacmanColor)
-                            } else if Float(index) < Float(dotCount) * progress{
+                            } else if Float(index) < Float(dotCount) * progress + 1{
                                 Pacman()
                                     .foregroundColor(pacmanColor)
                             } else if Float(index) > Float(dotCount) * progress {
@@ -82,8 +83,8 @@ public enum DisplayType{
 
 struct PacmanProgress_Preview: PreviewProvider {
     static var previews: some View {
-        PacmanProgress(progress: .constant(0.2),displayType: .mini(pacmanColor:.yellow,dotColor:.gray))
-        PacmanProgress(progress: .constant(0.2),displayType: .standard(pacmanColor:.yellow,dotColor:.gray))
+        PacmanProgress(progress: .constant(0),displayType: .mini(pacmanColor:.yellow,dotColor:.gray))
+        PacmanProgress(progress: .constant(0),displayType: .standard(pacmanColor:.yellow,dotColor:.gray))
         
     }
 }
