@@ -6,32 +6,33 @@
 
 File > Swift Packages > Add Package Dependency: https://github.com/aruis/PacmanProgress.git
 
-![CleanShot-2022-06-09-22 13 29](https://user-images.githubusercontent.com/1785495/172868303-34730d79-8a6b-4b43-977f-7386daad3590.gif)
+两种模式：
+* 简约模式
+* 标准模式
+
+![CleanShot-2022-06-10-15 40 53](https://user-images.githubusercontent.com/1785495/173015912-7a2d23e2-0faa-4bac-8814-8f83c569a21e.gif)
+
 
 ## 例子
 
 ```swift
-import SwiftUI
-
 struct Demo: View {
     
-    @State var procress:Float = 0.1
+    @State var progress:Float = 0
     
     var body: some View {
         VStack{
-            PacmanProgress(progress: $procress)
+            PacmanProgress(progress: $progress,displayType: .mini(pacmanColor: .yellow,dotColor: .gray))
+            
+            PacmanProgress(progress: $progress,displayType: .standard(pacmanColor: .yellow,dotColor: .gray))
             Button("TEST", action: {
-                procress += 0.05
+                progress += 0.05
             })
-        }.frame(width: 400, height: 400)
+        }
+        .frame(height: 400)
         
     }
 }
 
-struct Demo_Previews: PreviewProvider {
-    static var previews: some View {
-        Demo()
-    }
-}
 
 ```
