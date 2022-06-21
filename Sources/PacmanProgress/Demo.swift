@@ -13,6 +13,8 @@ struct Demo: View {
     
     var body: some View {
         VStack{
+            Text("\(progress)")
+            
             PacmanProgress(progress: $progress,displayType: .mini(pacmanColor: .yellow,dotColor: .gray))
             
             PacmanProgress(progress: $progress,displayType: .standard(pacmanColor: .yellow,dotColor: .gray))
@@ -20,7 +22,8 @@ struct Demo: View {
                 progress += 0.05
             })
         }
-        .frame(height: 400)
+        .frame(width:280,height: 400)
+        .padding(0)
         
     }
 }
